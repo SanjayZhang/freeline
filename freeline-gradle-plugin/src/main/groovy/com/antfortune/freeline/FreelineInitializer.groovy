@@ -231,6 +231,15 @@ class FreelineInitializer {
             }
             if (flavor) {
                 collectSourceSet(pro, sourceSets, flavor as String)
+
+                def flavorDimens = flavor.split("(?=[A-Z])")
+                if (flavorDimens.size() > 1) {
+                    flavorDimens.each { flv ->
+                        if (flv) {
+                            collectSourceSet(pro, sourceSets, (flv as String).uncapitalize())
+                        }
+                    }
+                }
             }
             collectSourceSet(pro, sourceSets, "main")
             sourceSets.main_manifest_path = pro.android.sourceSets.main.manifest.srcFile.path
