@@ -236,7 +236,7 @@ class FreelineInitializer {
                 if (flavorDimens.size() > 1) {
                     flavorDimens.each { flv ->
                         if (flv) {
-                            collectSourceSet(pro, sourceSets, (flv as String).uncapitalize())
+                            collectSourceSet(pro, sourceSets, (flv as String).toLowerCase())
                         }
                     }
                 }
