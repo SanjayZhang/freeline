@@ -7,4 +7,6 @@
     <drawable name="avd_hide_password_1">#fff</drawable>
     <drawable name="avd_hide_password_2">#fff</drawable>
     <drawable name="avd_hide_password_3">#fff</drawable>
+
+    <drawable name="ic_launcher_foreground_1">#fff</drawable>
 </resources>
