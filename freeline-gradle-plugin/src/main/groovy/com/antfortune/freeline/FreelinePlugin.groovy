@@ -16,8 +16,6 @@ import org.gradle.util.VersionNumber
  */
 class FreelinePlugin implements Plugin<Project> {
 
-    String freelineVersion = "0.8.8"
-
     @Override
     void apply(Project project) {
 
@@ -26,6 +24,7 @@ class FreelinePlugin implements Plugin<Project> {
         if (FreelineUtils.getProperty(project, "disableAutoDependency")) {
             println "freeline auto-dependency disabled"
         } else {
+            String freelineVersion = FreelineUtils.getFreelineGradlePluginVersion(project)
             println "freeline auto add runtime dependencies: ${freelineVersion}"
             project.dependencies {
                 debugCompile "com.antfortune.freeline:runtime:${freelineVersion}"
